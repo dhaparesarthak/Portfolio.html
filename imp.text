@@ -1,0 +1,527 @@
+//Document id firebase = 3jPWjZvx85LahOuweyHW
+
+
+
+//code 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarthak's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body {
+            background-color: #020513;
+            color: white;
+            font-family: "Poppins", sans-serif;
+            /* background-color: transparent; */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: #000000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 26px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: #f97316;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* margin: 80px 0; */
+
+            background: linear-gradient(300deg, #7d0cef, #0496d4);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+            /* border-radius: 16px; */
+            padding: 40px;
+        }
+
+        .firstSection>div {
+            width: 30%;
+        }
+
+        .leftSection {
+            font-size: 3rem;
+        }
+
+        .rightSection img {
+            /* background-color: red; */
+            width: 80%;
+            transform: scaleX(-1);
+        }
+
+        .orange {
+            color: #f97316;
+            text-shadow:
+                /* 0 0 5px #f97316, */
+                /* 0 0 10px #ffb347, */
+                /* 0 0 20px #8d6012, */
+                0 0 40px #ffb347;
+        }
+
+        #element {
+            color: #f97316;
+            text-shadow:
+                /* 0 0 5px #f97316, */
+                /* 0 0 10px #f97316, */
+                /* 0 0 20px #f97316, */
+                0 0 40px #ffb347,
+                0 0 80px #ffb347;
+        }
+
+        .secondSecond {
+            max-width: 80vw;
+            margin: auto;
+            height: auto;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            /* background-color: ; */
+        }
+
+        .secondSecond>h3 {
+            margin: 40px 0 0 0;
+        }
+
+        /* .box{} */
+
+        footer {
+            background: linear-gradient(300deg, #7d0cef, #0496d4);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+            }
+        }
+
+        .container {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            margin: 50px 0px;
+        }
+
+        .neon-card {
+            background: #232526;
+            border-radius: 24px;
+            padding: 2rem 2.5rem;
+            min-width: 300px;
+            color: #e4eedc;
+            box-shadow: 0 0 0 #f97316;
+            position: relative;
+            transition: transform 0.33s cubic-bezier(0.23, 1.12, 0.72, 0.85),
+                box-shadow 0.33s cubic-bezier(0.23, 1.12, 0.72, 0.85);
+            z-index: 1;
+            opacity: 0.95;
+        }
+
+        .neon-card:hover,
+        .neon-card:focus {
+            transform: scale(1.06);
+            box-shadow: 0 0 24px #f9731677, 0 0 48px #f9731644, 0 0 58px #f9731622;
+            outline: none;
+            opacity: 1;
+        }
+
+        .neon-title {
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            transition: color 0.33s cubic-bezier(0.23, 1.12, 0.72, 0.85);
+        }
+
+        .neon-separator {
+            border-top: 2px dashed #fff;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.33s cubic-bezier(0.23, 1.12, 0.72, 0.85);
+        }
+
+        .neon-card ul {
+            padding-left: 1.2rem;
+            list-style: none;
+            margin: 0;
+        }
+
+        .neon-card ul li {
+            position: relative;
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            color: #e4eedc;
+            padding-left: 1.4rem;
+        }
+
+        .neon-card ul li::before {
+            content: "❯";
+            color: #fff;
+            font-size: 1.1em;
+            position: absolute;
+            left: 0;
+            transition: color 0.33s cubic-bezier(0.23, 1.12, 0.72, 0.85);
+        }
+
+        .frontend-card:hover,
+        .frontend-card:focus {
+            box-shadow: 0 0 24px #0496d4cc, 0 0 48px #0496d488, 0 0 58px #0496d433;
+        }
+
+        .frontend-card:hover .neon-title,
+        .frontend-card:focus .neon-title {
+            color: #0496d4;
+        }
+
+        .frontend-card:hover .neon-separator,
+        .frontend-card:focus .neon-separator {
+            border-top-color: #0496d4;
+        }
+
+        .frontend-card:hover ul li::before,
+        .frontend-card:focus ul li::before {
+            color: #0496d4;
+        }
+
+        .backend-card:hover,
+        .backend-card:focus {
+            box-shadow: 0 0 24px #f9731677, 0 0 48px #f9731644, 0 0 58px #f9731622;
+        }
+
+        .backend-card:hover .neon-title,
+        .backend-card:focus .neon-title {
+            color: #f97316;
+        }
+
+        .backend-card:hover .neon-separator,
+        .backend-card:focus .neon-separator {
+            border-top-color: #f97316;
+        }
+
+        .backend-card:hover ul li::before,
+        .backend-card:focus ul li::before {
+            color: #f97316;
+        }
+
+        .tools-card:hover,
+        .tools-card:focus {
+            box-shadow: 0 0 24px #7d0cefcc, 0 0 48px #7d0cef88, 0 0 58px #7d0cef33;
+        }
+
+        .tools-card:hover .neon-title,
+        .tools-card:focus .neon-title {
+            color: #7d0cef;
+        }
+
+        .tools-card:hover .neon-separator,
+        .tools-card:focus .neon-separator {
+            border-top-color: #7d0cef;
+        }
+
+        .tools-card:hover ul li::before,
+        .tools-card:focus ul li::before {
+            color: #7d0cef;
+        }
+
+        /* Optionally, one line can be highlighted in a special orange shade */
+        /* .neon-card ul li.orange {
+      /* color: #ffb97f; */
+        /* }  */
+
+        .contact {
+            background: #0f0f0f;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            background: #32353a;
+            color: #fff;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 14px;
+            font-size: 16px;
+            transition: box-shadow 0.4s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            box-shadow: 0 0 4px #ff8c00;
+            border: 2px solid #ff8c00;
+            outline: none;
+            background-color: #32353a;
+        }
+
+        .glow-btn {
+            background: linear-gradient(90deg, #ff8c00, #ff6206);
+            color: #fff;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 24px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 0 16px #ff9100;
+            transition: filter 0.3s;
+            margin: 15px;
+        }
+
+        .glow-btn:hover {
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Sarthak' Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Project</a></li>
+                    <li><a href="/">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi! I'm <span class="orange">Sarthak</span>
+                <div>and I'm a Passionate</div>
+                <span id="element"></span>
+            </div>
+            <div class="rightSection">
+                <img src="./img/bg1.png" />
+            </div>
+        </section>
+
+        <hr />
+
+        <section class="secondSecond">
+            <h3>My Fav</h3>
+            <h1>Projects</h1>
+
+            <div class="box">
+                <div class="container">
+                    <div class="neon-card frontend-card" tabindex="0">
+                        <a href="https://github.com/dhaparesarthak/Weather-Application-" style="text-decoration: none; "
+                            target="_blank">
+                            <div class="neon-title">Weather <br>Application</div>
+                        </a>
+                        <div class="neon-separator"></div>
+                        <ul>
+                            <li>Python</li>
+                            <li>OpenWeatherMap API</li>
+                            <a href="https://github.com/dhaparesarthak/Weather-Application-"
+                                style="text-decoration: none; " target="_blank">
+                                <li>GitHub Repository</li>
+                            </a>
+                        </ul>
+                    </div>
+
+                    <div class="neon-card backend-card" tabindex="0">
+                        <a href="https://dhaparesarthak.github.io/Streamify.html/" style="text-decoration: none; "
+                            target="_blank">
+                            <div class="neon-title">Streamify</div>
+                        </a>
+                        <div class="neon-separator"></div>
+                        <ul>
+                            <li>HTML, CSS &amp; JS</li>
+                            <li>OMDb API</li>
+                            <a href="https://github.com/dhaparesarthak/Streamify.html" style="text-decoration: none; "
+                                target="_blank">
+                                <li>GitHub Repository</li>
+                            </a>
+                        </ul>
+                    </div>
+
+                    <div class="neon-card tools-card" tabindex="0">
+                        <div class="neon-title">Others Projects</div>
+                        <div class="neon-separator"></div>
+                        <ul>
+                            <a href="https://dhaparesarthak.github.io/TinDog.html/" style="text-decoration: none; "
+                                target="_blank">
+                                <li>TinDog(Bootstrap)</li>
+                            </a>
+                            <a href="https://github.com/dhaparesarthak/Music_Managment_System..cpp"
+                                style="text-decoration: none; " target="_blank">
+                                <li>Music Management <br>System(C++)</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section class="contact">
+            <h2 class="section-title">Contact <span style="color: #ff9100;">Me!</span></h2>
+            <form class="contact-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" placeholder="Mobile Number" required>
+                    <input type="text" placeholder="Email Subject" required>
+                </div>
+                <textarea placeholder="Your Message" style="height: 200px;" required></textarea>
+                <button type="submit" class="glow-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="py-3 my-0">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+            </li>
+        </ul>
+        <p class="text-center text-body-secondary">© 2025 Company, Inc</p>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed("#element", {
+            strings: ["Web Developer,", "coder", "&amp; Web Designer."],
+            typeSpeed: 50,
+            loop: true,
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+
+    <script>
+        window.onload = () => {
+            document.querySelector('.contact-form').classList.add('loaded');
+
+            const form = document.querySelector('.contact-form');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent page reload
+
+                // Get input values
+                const name = form.querySelector('input[placeholder="Full Name"]').value;
+                const email = form.querySelector('input[placeholder="Email Address"]').value;
+                const mobile = form.querySelector('input[placeholder="Mobile Number"]').value;
+                const subject = form.querySelector('input[placeholder="Email Subject"]').value;
+                const message = form.querySelector('textarea').value;
+
+                // Save to Firestore
+                db.collection('contacts').add({
+                    name: name,
+                    email: email,
+                    mobile: mobile,
+                    subject: subject,
+                    message: message,
+                    timestamp: new Date()
+                })
+                    .then(() => {
+                        alert('Message sent successfully! ✅');
+                        form.reset(); // Clear the form
+                    })
+                    .catch((error) => {
+                        alert('Error sending message ❌');
+                        console.error(error);
+                    });
+            });
+        };
+
+    </script>
+    <script>
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDnpnxIRI_-u3LXrByGIurtKQlXl-RxqkA",
+            authDomain: "sarthak-s-portfolio-9daff.firebaseapp.com",
+            projectId: "sarthak-s-portfolio-9daff",
+            storageBucket: "sarthak-s-portfolio-9daff.firebasestorage.app",
+            messagingSenderId: "619920085645",
+            appId: "1:619920085645:web:c74fe151fb3cd362ce88c4"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    </script>
+
+
+</body>
+
+</html>
